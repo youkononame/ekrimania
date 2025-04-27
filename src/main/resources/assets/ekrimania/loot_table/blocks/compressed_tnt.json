@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:block",
+  "functions": [
+    {
+      "add": false,
+      "count": 4.0,
+      "function": "minecraft:set_count"
+    }
+  ],
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:tnt"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ]
+}

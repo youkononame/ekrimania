@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "t": "minecraft:tnt"
+  },
+  "pattern": [
+    "tt",
+    "tt"
+  ],
+  "result": {
+    "count": 1,
+    "id": "ekrimania:compressed_tnt"
+  }
+}

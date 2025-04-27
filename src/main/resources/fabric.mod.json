@@ -1,0 +1,40 @@
+{
+	"schemaVersion": 1,
+	"id": "ekrimania",
+	"version": "${version}",
+	"name": "Ekrimania",
+	"description": "Adds additional explosion blocks, tools, armor and projectiles",
+	"authors": [
+		"youkononame"
+	],
+	"contact": {
+		"homepage": "https://youko.dev/",
+		"sources": "https://github.com/youkononame/ekrimania"
+	},
+	"license": "GNU AGPL-3.0",
+	"icon": "assets/ekrimania/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"dev.youko.ekrimania.Ekrimania"
+		],
+		"fabric-datagen": [
+			"dev.youko.ekrimania.EkrimaniaDataGenerator"
+		],
+		"client": [
+			"dev.youko.ekrimania.EkrimaniaClient"
+		]
+	},
+	"mixins": [
+		"ekrimania.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.16.14",
+		"minecraft": "~1.21.5",
+		"java": ">=21",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}

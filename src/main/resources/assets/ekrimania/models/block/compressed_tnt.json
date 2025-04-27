@@ -1,0 +1,11 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "up": "ekrimania:block/compressed_tnt_top",
+    "north": "ekrimania:block/compressed_tnt_side",
+    "east": "ekrimania:block/compressed_tnt_side",
+    "south": "ekrimania:block/compressed_tnt_side",
+    "west": "ekrimania:block/compressed_tnt_side",
+    "down": "ekrimania:block/compressed_tnt_bottom"
+  }
+}
