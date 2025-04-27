@@ -3,9 +3,6 @@ package dev.youko.ekrimania;
 import dev.youko.ekrimania.block.ModBlocks;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider;
-import net.minecraft.item.Items;
-import net.minecraft.loot.function.SetCountLootFunction;
-import net.minecraft.loot.provider.number.ConstantLootNumberProvider;
 import net.minecraft.registry.RegistryWrapper;
 
 import java.util.concurrent.CompletableFuture;
@@ -17,9 +14,12 @@ public class EkrimaniaLootTableProvider extends FabricBlockLootTableProvider {
 
     @Override
     public void generate() {
-        addDrop(ModBlocks.COMPRESSED_TNT, drops(Items.TNT)
-                .apply(SetCountLootFunction.builder(ConstantLootNumberProvider.create(4))));
+        // TODO: make drop 4 regular TNT when not mined with silk touch
+        addDrop(ModBlocks.COMPRESSED_TNT);
+    }
 
-        addDropWithSilkTouch(ModBlocks.COMPRESSED_TNT);
+    @Override
+    public String getName() {
+        return "EkrimaniaLootTablesProvider";
     }
 }
