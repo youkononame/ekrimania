@@ -6,6 +6,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.TntEntity;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import net.minecraft.world.explosion.Explosion;
@@ -22,6 +23,11 @@ public abstract class TntEntityMixin extends Entity {
     private static final ExplosionBehavior SHOCKWAVE_TNT_BEHAVIOR = new ExplosionBehavior() {
         @Override
         public boolean canDestroyBlock(Explosion explosion, BlockView world, BlockPos pos, BlockState state, float power) { return false; }
+
+        @Override
+        public float getKnockbackModifier(Entity entity) {
+            return 2.0F;
+        }
     };
 
     public TntEntityMixin(EntityType<?> type, World world) {
@@ -39,7 +45,6 @@ public abstract class TntEntityMixin extends Entity {
         if(getBlockState().isOf(ModBlocks.COMPRESSED_TNT)) {
             power = 8.0f;
         } else if(getBlockState().isOf(ModBlocks.SHOCKWAVE_TNT)) {
-            power = 8.0f;
             behavior = SHOCKWAVE_TNT_BEHAVIOR;
         }
 
