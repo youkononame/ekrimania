@@ -6,6 +6,7 @@ import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
 import net.minecraft.data.recipe.RecipeExporter;
 import net.minecraft.data.recipe.RecipeGenerator;
 import net.minecraft.item.Items;
+import net.minecraft.predicate.NumberRange;
 import net.minecraft.recipe.book.RecipeCategory;
 import net.minecraft.registry.RegistryWrapper;
 
@@ -26,6 +27,12 @@ public class EkrimaniaRecipeProvider extends FabricRecipeProvider {
                         .pattern("tt")
                         .input('t', Items.TNT)
                         .criterion(hasItem(Items.TNT), conditionsFromItem(Items.TNT))
+                        .offerTo(exporter);
+
+                createShapeless(RecipeCategory.COMBAT, ModBlocks.SHOCKWAVE_TNT, 1)
+                        .input(Items.TNT)
+                        .input(Items.GUNPOWDER)
+                        .criterion(hasItem(Items.GUNPOWDER), conditionsFromItem(Items.GUNPOWDER))
                         .offerTo(exporter);
             }
         };

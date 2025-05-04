@@ -3,8 +3,8 @@
 	"package": "dev.youko.ekrimania.mixin",
 	"compatibilityLevel": "JAVA_21",
 	"mixins": [
-		"TntBlockMixin",
-		"TntEntityAccessor"
+      "TntEntityMixin",
+		"TntBlockMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1

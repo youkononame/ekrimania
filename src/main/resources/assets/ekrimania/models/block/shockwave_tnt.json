@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "up": "minecraft:block/tnt_top",
+    "north": "ekrimania:block/shockwave_tnt_side",
+    "east": "ekrimania:block/shockwave_tnt_side",
+    "south": "ekrimania:block/shockwave_tnt_side",
+    "west": "ekrimania:block/shockwave_tnt_side",
+    "down": "minecraft:block/tnt_bottom",
+    "particle": "ekrimania:block/shockwave_tnt_side"
+  }
+}

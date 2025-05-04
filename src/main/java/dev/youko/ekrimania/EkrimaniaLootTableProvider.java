@@ -16,6 +16,8 @@ public class EkrimaniaLootTableProvider extends FabricBlockLootTableProvider {
     public void generate() {
         // TODO: make drop 4 regular TNT when not mined with silk touch
         addDrop(ModBlocks.COMPRESSED_TNT);
+
+        addDrop(ModBlocks.SHOCKWAVE_TNT);
     }
 
     @Override

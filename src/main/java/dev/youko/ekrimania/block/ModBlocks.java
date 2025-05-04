@@ -3,6 +3,7 @@ import dev.youko.ekrimania.Ekrimania;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockState;
 import net.minecraft.block.TntBlock;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
@@ -19,6 +20,11 @@ import java.util.function.Function;
 public class ModBlocks {
     public static final Block COMPRESSED_TNT = register(
             "compressed_tnt",
+            TntBlock::new,
+            AbstractBlock.Settings.create().sounds(BlockSoundGroup.GRASS),
+            true
+    ), SHOCKWAVE_TNT = register(
+            "shockwave_tnt",
             TntBlock::new,
             AbstractBlock.Settings.create().sounds(BlockSoundGroup.GRASS),
             true
@@ -51,10 +57,12 @@ public class ModBlocks {
 
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.COMBAT).register((itemGroup) -> {
             itemGroup.add(ModBlocks.COMPRESSED_TNT.asItem());
+            itemGroup.add(ModBlocks.SHOCKWAVE_TNT.asItem());
         });
 
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.REDSTONE).register((itemGroup) -> {
             itemGroup.add(ModBlocks.COMPRESSED_TNT.asItem());
+            itemGroup.add(ModBlocks.SHOCKWAVE_TNT.asItem());
         });
     }
 }
