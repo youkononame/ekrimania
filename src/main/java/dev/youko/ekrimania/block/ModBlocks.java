@@ -28,6 +28,11 @@ public class ModBlocks {
             TntBlock::new,
             AbstractBlock.Settings.create().sounds(BlockSoundGroup.GRASS),
             true
+    ), FIREBOMB_TNT = register(
+            "firebomb_tnt",
+            TntBlock::new,
+            AbstractBlock.Settings.create().sounds(BlockSoundGroup.GRASS),
+            true
     );
 
     private static Block register(String name, Function<AbstractBlock.Settings, Block> blockFactory, AbstractBlock.Settings settings, boolean shouldRegisterItem) {
@@ -58,11 +63,13 @@ public class ModBlocks {
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.COMBAT).register((itemGroup) -> {
             itemGroup.add(ModBlocks.COMPRESSED_TNT.asItem());
             itemGroup.add(ModBlocks.SHOCKWAVE_TNT.asItem());
+            itemGroup.add(ModBlocks.FIREBOMB_TNT.asItem());
         });
 
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.REDSTONE).register((itemGroup) -> {
             itemGroup.add(ModBlocks.COMPRESSED_TNT.asItem());
             itemGroup.add(ModBlocks.SHOCKWAVE_TNT.asItem());
+            itemGroup.add(ModBlocks.FIREBOMB_TNT.asItem());
         });
     }
 }

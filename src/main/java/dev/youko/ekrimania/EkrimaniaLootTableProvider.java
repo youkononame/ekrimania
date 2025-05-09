@@ -18,6 +18,7 @@ public class EkrimaniaLootTableProvider extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.COMPRESSED_TNT);
 
         addDrop(ModBlocks.SHOCKWAVE_TNT);
+        addDrop(ModBlocks.FIREBOMB_TNT);
     }
 
     @Override

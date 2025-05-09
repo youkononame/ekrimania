@@ -25,12 +25,7 @@ public class TntBlockMixin {
     @Inject(method = "onDestroyedByExplosion", at = @At(value = "INVOKE", target="Lnet/minecraft/entity/TntEntity;getFuse()I"))
     private void onDestroyedByExplosionWrap(CallbackInfo ci, @Local TntEntity tntEntity) {
         TntBlock thisObject = (TntBlock)(Object)this;
-
-        if(thisObject == ModBlocks.COMPRESSED_TNT) {
-            replaceTnt(tntEntity, ModBlocks.COMPRESSED_TNT.getDefaultState());
-        } else if(thisObject == ModBlocks.SHOCKWAVE_TNT) {
-            replaceTnt(tntEntity, ModBlocks.SHOCKWAVE_TNT.getDefaultState());
-        }
+        replaceTnt(tntEntity, thisObject.getDefaultState());
     }
 
     @Inject(method = "primeTnt(Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/entity/LivingEntity;)Z", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/World;spawnEntity(Lnet/minecraft/entity/Entity;)Z"))

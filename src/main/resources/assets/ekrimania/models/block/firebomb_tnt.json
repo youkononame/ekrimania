@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "up": "ekrimania:block/firebomb_tnt_top",
+    "north": "ekrimania:block/firebomb_tnt_side",
+    "east": "ekrimania:block/firebomb_tnt_side",
+    "south": "ekrimania:block/firebomb_tnt_side",
+    "west": "ekrimania:block/firebomb_tnt_side",
+    "down": "ekrimania:block/firebomb_tnt_bottom",
+    "particle": "ekrimania:block/firebomb_tnt_side"
+  }
+}

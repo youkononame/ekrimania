@@ -34,6 +34,12 @@ public class EkrimaniaRecipeProvider extends FabricRecipeProvider {
                         .input(Items.GUNPOWDER)
                         .criterion(hasItem(Items.GUNPOWDER), conditionsFromItem(Items.GUNPOWDER))
                         .offerTo(exporter);
+
+                createShapeless(RecipeCategory.COMBAT, ModBlocks.FIREBOMB_TNT, 1)
+                        .input(Items.TNT)
+                        .input(Items.FIRE_CHARGE)
+                        .criterion(hasItem(Items.FIRE_CHARGE), conditionsFromItem(Items.FIRE_CHARGE))
+                        .offerTo(exporter);
             }
         };
     }
